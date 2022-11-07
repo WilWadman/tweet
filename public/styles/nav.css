@@ -1,0 +1,35 @@
+
+nav {
+  background-color: #4056A1;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  height: 120px;
+  align-items: center;
+  position: fixed;
+ 
+ 
+}
+nav .main-title {
+  margin-left:1.5em;
+  margin-right:1.5em;
+  color: #ffffff;
+  
+  font-family: 'Bungee', sans-serif;
+
+  
+  
+}
+
+
+
+
+nav .right-side {
+ 
+  color: #ffffff;
+  margin-right:1.5em;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size:medium;
+  
+
+}
