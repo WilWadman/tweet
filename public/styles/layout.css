@@ -41,9 +41,10 @@ margin-top:30px;
 
 }
 
-.tweehead:hover {
-  box-shadow: 0 0 11px rgba(146, 30, 30, 0.2); 
+article:hover {
+  box-shadow: 0 0 11px rgba(53, 41, 41, 0.2); 
 }
+
 .tweetheader{
 display:flex;
 flex-direction:row;
