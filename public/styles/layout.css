@@ -34,6 +34,80 @@ main {
   margin: auto;
 }
 
+article{
+background-color: #f4f1ec;
+border-style:solid;
+margin-top:30px;
+
+}
+
+.tweehead:hover {
+  box-shadow: 0 0 11px rgba(146, 30, 30, 0.2); 
+}
+.tweetheader{
+display:flex;
+flex-direction:row;
+justify-content: center;
+font-size: medium;
+font-weight: 300;
+}
+
+.tweethead{
+  display:flex;
+  justify-content:space-between;
+  font-size: medium;
+  }
+
+ .handle{
+  color:cornflowerblue;
+  font-size: small;
+  margin-right: 1em;
+  opacity: 0.5;
+ } 
+
+ .tweetbody{
+  width:90%;
+  border-bottom:solid;
+  margin-top:30px;
+  margin-left: 1em;
+  
+ 
+ }
+
+ .footerspacer{
+  display:flex;
+  justify-content: space-between;
+  font-size: small;
+  margin-left:1.5em;
+ }
+
+ .tweetfooter{
+  display:flex;
+  align-items: center;
+  flex-direction:row;
+  color:cornflowerblue;
+ }
+
+ .icon1{
+  padding-right: 10px
+ }
+ .icon2{
+  padding-right: 10px
+ }
+ .icon3{
+  padding-right: 10px
+ }
+
+ .icon1:hover{
+  color:darkgoldenrod;
+ }
+ .icon2:hover{
+  color:darkgoldenrod;
+ }
+ .icon3:hover{
+  color:darkgoldenrod;
+ }
+ 
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
