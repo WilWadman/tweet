@@ -1,0 +1,30 @@
+section{
+  width: 90%;
+  margin: auto;
+}
+
+form >textarea{
+  font-family: "Source Sans Pro", sans-serif;
+  border-bottom: solid;  
+  margin-bottom: 10px;
+  font-weight: bold;
+  width: 100%;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+
+}
+
+.counterbutton{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-family: "Bungee", sans-serif;
+  
+  color: #545149;
+}
+
+.button{
+  background-color: #4056a1;
+  color: #ffffff;
+}
