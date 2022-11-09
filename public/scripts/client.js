@@ -65,7 +65,7 @@ const createTweetElement = function (tweet) {
 
             <div class="tweetbody">${tweet.content.text}</div>
             <div class="footerspacer">
-              <h5> ${tweet.created_at}</h5>
+              <h5> ${timeago.format(tweet.created_at)}</h5>
               <div class="tweetfooter">
                 <div class="icon1">
                   <i class="fa-solid fa-flag"></i>
@@ -83,10 +83,6 @@ const createTweetElement = function (tweet) {
 };
 
 $(document).ready(function () {
-  const loadtweets = function(){
-    $.get('/tweets')
-    .then(renderTweets(data));
-  }
-  loadtweets();
-  
+  $.get('/tweets')
+  .then(renderTweets)
 });
