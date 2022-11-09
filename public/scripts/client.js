@@ -3,38 +3,54 @@
  * jQuery is already loaded
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
-// Fake data taken from initial-tweets.json
-// const data = [
-//   {
-//     user: {
-//       name: "Newton",
-//       avatars: "https://i.imgur.com/73hZDYK.png",
-//       handle: "@SirIsaac",
-//     },
-//     content: {
-//       text: "If I have seen further it is by standing on the shoulders of giants",
-//     },
-//     created_at: 1461116232227,
-//   },
-//   {
-//     user: {
-//       name: "Descartes",
-//       avatars: "https://i.imgur.com/nlhLi3I.png",
-//       handle: "@rd",
-//     },
-//     content: {
-//       text: "Je pense , donc je suis",
-//     },
-//     created_at: 1461113959088,
-//   },
-// ];
 
-const renderTweets = function (data) {
+$(document).ready(function() {
+  // --- our code goes here ---
+
+  $("form").on("submit", onSubmit);
+  loadTweets();
+
+});
+
+const loadTweets = function() {
+  $.get('/tweets')
+    .then((data) => renderTweets(data));
+};
+
+
+const onSubmit = function(event) {
+  event.preventDefault();
+  const serial = $(this).serialize();
+  const numberOfChars = $("#tweet-text").val().length;
+
+  if (numberOfChars > 140) {
+    document.querySelector('.error').innerHTML = 'This tweet is too long, please make it smaller';
+    $('.error').slideDown();
+
+    return;
+  }
+
+  if ($("#tweet-text").val() === "") {
+    document.querySelector('.error').innerHTML = 'Error, your tweet needs content to be posted.';
+    $('.error').slideDown();
+    return;
+  }
+
+  $.post("/tweets", serial)
+  
+    .then(() => {
+      document.querySelector('.error').innerHTML = "";
+      $('.error').slideUp();
+      loadTweets();
+    });
+};
+
+const renderTweets = function(data) {
   for (let users of data) {
     let tweet = createTweetElement(users);
-    console.log("tweet", tweet);
     $(".tweet-container").append(tweet);
-    console.log("36", tweet);
+
+
   }
   return;
 
@@ -43,7 +59,8 @@ const renderTweets = function (data) {
   // takes return value and appends it to the tweets container
 };
 
-const createTweetElement = function (tweet) {
+const createTweetElement = function(tweet) {
+  tweet.content.text = $('<div/>').text(tweet.content.text).html();
   let $tweet = `
   
 
@@ -82,7 +99,4 @@ const createTweetElement = function (tweet) {
   return $tweet;
 };
 
-$(document).ready(function () {
-  $.get('/tweets')
-  .then(renderTweets)
-});
+
