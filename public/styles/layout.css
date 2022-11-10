@@ -6,7 +6,9 @@
 html {
   box-sizing: border-box;
 }
-*, *:before, *:after {
+*,
+*:before,
+*:after {
   box-sizing: inherit;
 }
 
@@ -14,110 +16,133 @@ html {
  * Global layout stuff
  */
 nav {
-  font-family: 'Bungee', sans-serif;
-  
+  font-family: "Bungee", sans-serif;
+}
+/* right side nav layout*/
+.right-side {
+  display: flex;
+  flex-direction: column;
+  padding-left: 1.5em;
+}
+.tweet-arrows {
+  margin-left: 50px;
 }
 
+/* body layout */
 body {
   color: #545149;
   background-color: #f4f1ec;
   font-size: 24px;
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: "Source Sans Pro", sans-serif;
   width: 100%;
 }
 
 main {
   width: 90%;
-  display:flex;
+  display: flex;
   justify-content: center;
   flex-direction: column;
   background-color: #f4f1ec;
   margin: auto;
 }
 
-article{
-background-color: #f4f1ec;
-border-style:solid;
-margin-top:30px;
-
-
+article {
+  background-color: #f4f1ec;
+  border-style: solid;
+  margin-top: 30px;
 }
 
 article:hover {
-  box-shadow: 0 0 11px rgba(53, 41, 41, 0.2); 
+  box-shadow: 0 0 11px rgba(53, 41, 41, 0.2);
 }
 
-.tweetheader{
-display:flex;
-flex-direction:row;
-justify-content: center;
-font-size: medium;
-font-weight: 300;
-}
-
-.tweethead{
-  display:flex;
-  justify-content:space-between;
+.tweetheader {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
   font-size: medium;
-  }
+  font-weight: 300;
+}
 
- .handle{
-  color:cornflowerblue;
+.tweethead {
+  display: flex;
+  justify-content: space-between;
+  font-size: medium;
+}
+
+.handle {
+  color: cornflowerblue;
   font-size: small;
   margin-right: 1em;
   opacity: 0.5;
- } 
+}
 
- .tweetbody{
-  width:90%;
-  border-bottom:solid;
-  margin-top:30px;
+.tweetbody {
+  width: 90%;
+  border-bottom: solid;
+  margin-top: 30px;
   margin-left: 1em;
-  
- 
- }
+  white-space: normal;
+  word-break: break-all;
+}
 
- .footerspacer{
-  display:flex;
+/* footer layout */
+.footerspacer {
+  display: flex;
   justify-content: space-between;
   font-size: small;
-  margin-left:1.5em;
- }
+  margin-left: 1.5em;
+}
 
- .tweetfooter{
-  display:flex;
+.tweetfooter {
+  display: flex;
   align-items: center;
-  flex-direction:row;
-  color:cornflowerblue;
- }
+  flex-direction: row;
+  color: cornflowerblue;
+}
 
- .tweet-container{
-  display:flex;
-  flex-direction:column-reverse;
- }
+.tweet-container {
+  display: flex;
+  flex-direction: column-reverse;
+}
 
- .icon1{
-  padding-right: 10px
- }
- .icon2{
-  padding-right: 10px
- }
- .icon3{
-  padding-right: 10px
- }
+/* icon styling */
 
- .icon1:hover{
-  color:darkgoldenrod;
- }
- .icon2:hover{
-  color:darkgoldenrod;
- }
- .icon3:hover{
-  color:darkgoldenrod;
- }
- 
-/*
- * Additional CSS can be defined below or in other CSS files, as per instructions
- */
+.icon1 {
+  padding-right: 10px;
+}
+.icon2 {
+  padding-right: 10px;
+}
+.icon3 {
+  padding-right: 10px;
+}
 
- 
+.icon1:hover {
+  color: darkgoldenrod;
+}
+.icon2:hover {
+  color: darkgoldenrod;
+}
+.icon3:hover {
+  color: darkgoldenrod;
+}
+
+/* screen size specific layouts */
+
+@media only screen and (min-width: 1024px) {
+  .hero-image {
+    width: 33.3%;
+    float: left;
+    margin-left: 13.5em;
+    margin-top: 3em;
+  }
+  .nav-spacer {
+    margin-top: 3.5em;
+  }
+  .container {
+    width: 60%;
+    float: right;
+    margin-top: 2.5em;
+  }
+}

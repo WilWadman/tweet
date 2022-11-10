@@ -1,3 +1,4 @@
+/* navigation styling */
 nav {
   background-color: #4056a1;
   width: 100%;
@@ -14,7 +15,6 @@ nav .main-title {
   margin-left: 1.5em;
   margin-right: 1.5em;
   color: #ffffff;
-
   font-family: "Bungee", sans-serif;
 }
 
@@ -23,4 +23,12 @@ nav .right-side {
   margin-right: 1.5em;
   font-family: "Source Sans Pro", sans-serif;
   font-size: medium;
+}
+
+/* screen size specific styling */
+
+@media only screen and (min-width: 1024px) {
+  nav {
+    margin-bottom: 20em;
+  }
 }

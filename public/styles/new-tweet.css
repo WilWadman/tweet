@@ -1,38 +1,43 @@
-section{
+section {
   width: 90%;
   margin: auto;
 }
 
-form >textarea{
+/* form styling */
+form > textarea {
   font-family: "Source Sans Pro", sans-serif;
-  border-bottom: solid;  
+  border-bottom: solid;
   margin-bottom: 10px;
-margin-top:20px;
+  margin-top: 20px;
   font-weight: bold;
   width: 100%;
   border-top: none;
   border-left: none;
   border-right: none;
-
 }
 
-.counterbutton{
+/* button styling */
+
+.counterbutton {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   font-family: "Bungee", sans-serif;
-  
+
   color: #161414;
 }
 
-.button{
+.button {
   background-color: #4056a1;
   color: #ffffff;
 }
+
+/* error message styling */
+
 .error {
   margin: 10px 0px;
   padding: 12px;
-  color: #D8000C;
+  color: #d8000c;
   font-size: medium;
   font-family: sans-serif;
   border: red;

@@ -1,20 +1,29 @@
+/* header styling */
+
 header {
   background-color: #cfd600;
-background-image: url("https://www.transparenttextures.com/patterns/argyle.png");
-margin-top: 120px;
+  background-image: url("https://www.transparenttextures.com/patterns/argyle.png");
+  margin-top: 120px;
 }
-header .main-image{
-height: 400px;
-width: 100%;
-display: flex;
-justify-content: center;
-
-}
-
-header .name{
+header .main-image {
+  height: 400px;
+  width: 100%;
   display: flex;
-justify-content: center;
-
+  justify-content: center;
 }
 
+header .name {
+  display: flex;
+  justify-content: center;
+}
 
+/* Screen size specific styling*/
+
+@media only screen and (min-width: 1024px) {
+  header {
+    width: 33.3%;
+    float: left;
+    margin-left: 3.5em;
+    font-size: 0.75rem;
+  }
+}

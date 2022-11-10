@@ -1,22 +1,13 @@
-/*
- * Client-side JS logic goes here
- * jQuery is already loaded
- * Reminder: Use (and do all your DOM work in) jQuery's document ready function
- */
+/* submit button jquery */
 
 $(document).ready(function() {
-  // --- our code goes here ---
-
   $("form").on("submit", onSubmit);
   loadTweets();
-
 });
 
 const loadTweets = function() {
-  $.get('/tweets')
-    .then((data) => renderTweets(data));
+  $.get("/tweets").then((data) => renderTweets(data));
 };
-
 
 const onSubmit = function(event) {
   event.preventDefault();
@@ -24,43 +15,42 @@ const onSubmit = function(event) {
   const numberOfChars = $("#tweet-text").val().length;
 
   if (numberOfChars > 140) {
-    document.querySelector('.error').innerHTML = 'This tweet is too long, please make it smaller';
-    $('.error').slideDown();
+    document.querySelector(".error").innerHTML =
+      "This tweet is too long, please make it smaller";
+    $(".error").slideDown();
 
     return;
   }
 
   if ($("#tweet-text").val() === "") {
-    document.querySelector('.error').innerHTML = 'Error, your tweet needs content to be posted.';
-    $('.error').slideDown();
+    document.querySelector(".error").innerHTML =
+      "Error, your tweet needs content to be posted.";
+    $(".error").slideDown();
     return;
   }
 
   $.post("/tweets", serial)
-  
     .then(() => {
-      document.querySelector('.error').innerHTML = "";
-      $('.error').slideUp();
+      document.querySelector(".error").innerHTML = "";
+      $(".error").slideUp();
       loadTweets();
+      document.getElementById("myform").reset();
+      $("output").text("140");
     });
 };
+
+/* Tweet object rendering */
 
 const renderTweets = function(data) {
   for (let users of data) {
     let tweet = createTweetElement(users);
     $(".tweet-container").append(tweet);
-
-
   }
   return;
-
-  // loops through tweets
-  // calls createTweetElement for each tweet
-  // takes return value and appends it to the tweets container
 };
 
 const createTweetElement = function(tweet) {
-  tweet.content.text = $('<div/>').text(tweet.content.text).html();
+  tweet.content.text = $("<div/>").text(tweet.content.text).html();
   let $tweet = `
   
 
@@ -98,5 +88,3 @@ const createTweetElement = function(tweet) {
 
   return $tweet;
 };
-
-

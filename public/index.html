@@ -4,7 +4,8 @@
 <head>
   <!-- Meta Information -->
   <title>Tweeter - Home Page</title>
-
+  <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
+  
   <!-- External CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
     type="text/css" />
@@ -20,11 +21,13 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
     integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <!-- App CSS -->
+  
+    <!-- App CSS -->
   <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
   <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
   <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
   <link rel="stylesheet" href="/styles/header.css" type="text/css" />
+  
   <!-- External JS -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js" integrity="sha512-SVDh1zH5N9ChofSlNAK43lcNS7lWze6DTVx1JCXH1Tmno+0/1jMpdbR8YDgDUfcUrPp1xyE53G42GFrcM0CMVg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -45,33 +48,40 @@
       <div class="main-title">TWEETER</div>
     </span>
     <div class="right-side">
-      <div style="display:flex; flex-direction:column;">
+      
         <span><b>Write</b> a new Tweet</span>
-        <span><i class="fa-solid fa-angles-down" style="
-        padding-left: 50px;"></i></span>
-        </divstyle>
+        <div class="tweet-arrows">
+        <span><a href="#nav-spacer"> <i class="fa-solid fa-angles-down"></i></a></span>
+      </div>
       </div>
 
   </nav>
+  <!-- nav spacer element--> 
+<div class="nav-spacer" id="nav-spacer">
+</div>
 
-
+<!-- Hero image and name-->
   <header>
+    <div class="hero-image">
     <div class="main-image">
       <img src="/images/profile-hex.png">
     </div>
+    
     <br>
-    <div class="name">
+    <div class="name" id="name">
       <h2>Your Name</h2>
     </div>
   </header>
+</div>
+  
 
-  <!-- Page-specific (main) content here -->
-  <main class="container">
+<!-- Page-specific (main) content here -->
+  <main class="container" id="container">
     
-    <section class="new-tweet">
+    <section class="new-tweet" id="new-tweet">
       <div id="error-message" class="error"></div>
-      <form action="/tweets" method="POST">
-
+      <form action="/tweets" method="POST" id ="myform">
+        
         <textarea placeholder="What are you humming about?" name="text" id="tweet-text"></textarea>
 
         <div class="counterbutton">
@@ -84,7 +94,7 @@
 
 
         </section>
-
+      </div>
       </form>
     </section>
 
