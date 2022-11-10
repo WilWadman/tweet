@@ -1,8 +1,13 @@
 # Tweeter Project
 
-Tweeter is a simple, single-page Twitter clone.
+Tweeter is a simple, single-page Twitter clone. This page is designed to be reactive to monitor sizes over 1024px. This page can take unlimited tweets that are 140 characters or less and publish them dynamically with randomized user names. It is also designed to throw errors should the tweet not be valid (Over 140 or 0 charcters)
 
-This repository is the starter code for the project: Students will fork and clone this repository, then build upon it to practice their HTML, CSS, JS, jQuery and AJAX front-end skills, and their Node, Express back-end skills.
+
+
+## Screenshots
+!["Homepage"](https://github.com/WilWadman/tweet/blob/master/docs/Homepage.png?raw=true)
+!["Tweet input"](https://github.com/WilWadman/tweet/blob/master/docs/tweetbox.png?raw=true)
+!["Published Tweet"](https://github.com/WilWadman/tweet/blob/master/docs/published%20tweet.png?raw=true)
 
 ## Getting Started
 
