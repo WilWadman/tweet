@@ -15,26 +15,25 @@ const onSubmit = function(event) {
   const numberOfChars = $("#tweet-text").val().length;
 
   if (numberOfChars > 140) {
-    document.querySelector(".error").innerHTML =
-      "This tweet is too long, please make it smaller";
+    $(".error").html("This tweet is too long, please make it smaller");
     $(".error").slideDown();
 
     return;
   }
 
   if ($("#tweet-text").val() === "") {
-    document.querySelector(".error").innerHTML =
-      "Error, your tweet needs content to be posted.";
+    $(".error").html("Error, your tweet needs content to be posted.") 
+
     $(".error").slideDown();
     return;
   }
 
   $.post("/tweets", serial)
     .then(() => {
-      document.querySelector(".error").innerHTML = "";
+      $(".error").html("");
       $(".error").slideUp();
       loadTweets();
-      document.getElementById("myform").reset();
+      $("#myform").reset();
       $("output").text("140");
     });
 };
@@ -42,10 +41,14 @@ const onSubmit = function(event) {
 /* Tweet object rendering */
 
 const renderTweets = function(data) {
-  for (let users of data) {
-    let tweet = createTweetElement(users);
-    $(".tweet-container").append(tweet);
-  }
+  
+  $(".tweet-container").empty();
+  data.forEach(tweet =>{
+
+
+    let $newtweet = createTweetElement(tweet);
+    $(".tweet-container").append($newtweet);})
+  
   return;
 };
 
