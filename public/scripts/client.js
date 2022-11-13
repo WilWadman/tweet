@@ -17,38 +17,32 @@ const onSubmit = function(event) {
   if (numberOfChars > 140) {
     $(".error").html("This tweet is too long, please make it smaller");
     $(".error").slideDown();
-
     return;
   }
 
   if ($("#tweet-text").val() === "") {
-    $(".error").html("Error, your tweet needs content to be posted.") 
-
+    $(".error").html("Error, your tweet needs content to be posted.");
     $(".error").slideDown();
     return;
   }
 
-  $.post("/tweets", serial)
-    .then(() => {
-      $(".error").html("");
-      $(".error").slideUp();
-      loadTweets();
-      $("#myform").reset();
-      $("output").text("140");
-    });
+  $.post("/tweets", serial).then(() => {
+    $(".error").html("");
+    $(".error").slideUp();
+    loadTweets();
+    $("#myform").reset();
+    $("output").text("140");
+  });
 };
 
 /* Tweet object rendering */
 
 const renderTweets = function(data) {
-  
   $(".tweet-container").empty();
-  data.forEach(tweet =>{
-
-
+  data.forEach((tweet) => {
     let $newtweet = createTweetElement(tweet);
-    $(".tweet-container").append($newtweet);})
-  
+    $(".tweet-container").append($newtweet);
+  });
   return;
 };
 
